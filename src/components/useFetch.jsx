@@ -5,13 +5,13 @@ const useFetch = (url) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const getCoordinates = async () => {
+    const getData = async () => {
       const response = await fetch(url);
-      const issCoordinates = await response.json();
+      const fetchedData = await response.json();
       setLoading(false);
-      setData(issCoordinates);
+      setData(fetchedData);
     };
-    getCoordinates();
+    getData();
   }, [url]);
 
   return { data: data, loading: loading };
